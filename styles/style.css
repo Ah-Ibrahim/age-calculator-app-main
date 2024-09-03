@@ -1,0 +1,141 @@
+@font-face {
+    font-family: 'Poppins';
+    src: url('../assets/fonts/Poppins-Italic.ttf');
+    font-style: italic;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../assets/fonts/Poppins-Bold.ttf');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../assets/fonts/Poppins-ExtraBoldItalic.ttf');
+    font-weight: 800;
+    font-style: italic;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --purple: hsl(259, 100%, 65%);
+    --light-red: hsl(0, 100%, 67%);
+
+    --white: hsl(0, 0%, 100%);
+    --off-white: hsl(0, 0%, 94%);
+    --light-grey: hsl(0, 0%, 94%);
+    --smokey-grey: hsl(0, 1%, 44%);
+    --off-black: hsl(0, 0%, 8%);
+}
+
+body {
+    height: 100vh;
+    background-color: var(--off-white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins';
+    font-weight: bold;
+}
+
+.container {
+    background-color: var(--white);
+    width: 59vw;
+    padding: 3.5rem;
+    border-radius: 20px 20px 200px 20px;
+    gap: 2rem;
+}
+
+.inputs {
+    display: flex;
+    gap: 2rem;
+    border-bottom: 3px solid var(--light-grey);
+    padding-bottom: 3rem;
+    width: 90%;
+    position: relative;
+}
+
+.inputs__component {
+    flex-basis: 0;
+    flex-grow: 0.27;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.inputs__component::before {
+    content: attr(data-date);
+    color: var(--smokey-grey);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+
+.inputs__component::after {
+    /* content: 'Must be a valid day'; */
+    font-style: italic;
+    font-weight: 400;
+}
+
+.inputs__component input {
+    outline: none;
+    color: var(--off-black);
+    border: 3px solid var(--light-grey);
+    font-size: 32px;
+    font-weight: bold;
+    padding: 0.5em 0.7em;
+    width: 100%;
+    border-radius: 5px;
+}
+
+input::placeholder {
+    color: var(--smokey-grey);
+}
+
+.error input {
+    border-color: var(--light-red);
+}
+
+
+.error::before, .error::after {
+    color: var(--light-red);
+}
+
+.btn {
+    background-color: var(--purple);
+    border-radius: 50%;
+    padding: 1.5rem 1.5rem;
+    border: none;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform: translate(70%, 50%);
+    cursor: pointer;
+}
+
+.container__output {
+    padding: 2.5rem 0 0;
+    /* display: flex;
+    flex-direction: column;
+    gap: -5rem; */
+    line-height: 7.25rem;
+}
+
+.output__text {
+    font-size: 6.5rem;
+    /* letter-spacing: -6px; */
+    font-style: italic;
+    font-weight: 800;
+
+}
+
+.output__text .output {
+    color: var(--purple);
+}
