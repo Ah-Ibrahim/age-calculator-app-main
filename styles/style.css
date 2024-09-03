@@ -93,10 +93,16 @@ body {
     padding: 0.5em 0.7em;
     width: 100%;
     border-radius: 5px;
+    caret-color: var(--purple);
+    cursor: pointer;
 }
 
-input::placeholder {
+.inputs__component input::placeholder {
     color: var(--smokey-grey);
+}
+
+.inputs__component input:focus {
+    border-color: var(--purple);
 }
 
 .error input {
@@ -118,6 +124,15 @@ input::placeholder {
     right: 0;
     transform: translate(70%, 50%);
     cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn:hover {
+    background-color: var(--off-black);
+}
+
+.btn:active {
+    transform: translate(70%, 50%) scale(0.8);
 }
 
 .container__output {
