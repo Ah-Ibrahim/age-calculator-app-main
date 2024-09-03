@@ -105,13 +105,21 @@ body {
     border-color: var(--purple);
 }
 
-.error input {
+.inputs__component .error {
     border-color: var(--light-red);
 }
 
 
-.error::before, .error::after {
+.inputs__component:has(.error)::before, .inputs__component:has(.error)::after {
     color: var(--light-red);
+}
+
+.inputs__component:has(.error--empty)::after {
+    content: 'This field is required';
+}
+
+.inputs__component:has(.error--invalid)::after {
+    content: 'Must be a valid 'attr(data-date);
 }
 
 .btn {
