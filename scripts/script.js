@@ -78,7 +78,11 @@ const calcAge = function () {
 	}
 
 	if ((currentMonth < userMonth && currentDay <= userDay) || currentDay < userDay) {
-		monthDiff--;
+		if (--monthDiff < 0) {
+			yearDiff--;
+			monthDiff = 11;
+		}
+
 		dayDiff = daysInMonthForUserYear[userMonth - 1] - userDay + currentDay;
 	} else {
 		dayDiff = currentDay - userDay;
