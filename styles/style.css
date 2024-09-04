@@ -192,9 +192,12 @@ body {
         padding: 1.25rem;
     }
 
+    .btn:active {
+        transform: translate(-50%, 50%) scale(0.8);
+    }
+
     .btn img {
         width: 25px;
-        /* aspect-ratio: 3 / 2; */
     }
 
     .container__output {
