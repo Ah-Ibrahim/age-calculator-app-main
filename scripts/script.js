@@ -150,24 +150,38 @@ const parseDate = function () {
 	inputDate.month = inputMonth.value;
 	inputDate.year = inputYear.value;
 
-	// console.log(validateDate(inputDate));
 	if (validateDate(inputDate)) {
 		updateOutput(...calcAge());
 	}
 };
 
 const autoSwitch = function (input, nextInput) {
-	if (input.value.length === input.maxLength) {
+	if (input.value.length === input.maxLength && validateInputNumbersOnly(input)) {
 		nextInput.focus();
 	}
 };
 
+const validateInputNumbersOnly = function (input) {
+	if (input.value === input.value.replace(/[^0-9]/g, '')) {
+		return true;
+	}
+
+	input.value = input.value.replace(/[^0-9]/g, '');
+	return false;
+};
+
 btn.addEventListener('click', parseDate);
 inputDay.addEventListener('input', function () {
+	validateInputNumbersOnly(this);
 	autoSwitch(this, inputMonth);
 });
 inputMonth.addEventListener('input', function () {
+	validateInputNumbersOnly(this);
 	autoSwitch(this, inputYear);
+});
+
+inputYear.addEventListener('input', function () {
+	validateInputNumbersOnly(this);
 });
 document.addEventListener('keydown', (event) => {
 	if (event.key === 'Enter') {
