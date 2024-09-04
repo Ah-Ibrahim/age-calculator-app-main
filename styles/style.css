@@ -43,6 +43,7 @@ body {
     align-items: center;
     font-family: 'Poppins';
     font-weight: bold;
+    position: relative;
 }
 
 .container {
@@ -153,6 +154,25 @@ body {
 
 .container__output .output {
     color: var(--purple);
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding-bottom: 2rem;
+}
+
+.attribution a {
+    color: var(--purple);
+    transition: all 0.35s;
+}
+
+.attribution a:hover {
+    color: var(--smokey-grey);
 }
 
 @media (max-width: 400px) {

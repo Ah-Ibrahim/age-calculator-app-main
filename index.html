@@ -10,43 +10,35 @@
 		<title>Frontend Mentor | Age calculator app</title>
 
 		<link rel="stylesheet" href="styles/style.css" />
-		<style>
-			.attribution {
-				font-size: 11px;
-				text-align: center;
-			}
-			.attribution a {
-				color: hsl(228, 45%, 44%);
-			}
-		</style>
 	</head>
 	<body>
-		<section class="container">
-			<div class="inputs">
-				<div class="inputs__component" data-date="day">
-					<input type="text" placeholder="DD" maxlength="2" />
+		<main>
+			<section class="container">
+				<div class="inputs">
+					<div class="inputs__component" data-date="day">
+						<input type="text" placeholder="DD" maxlength="2" aria-label="Day input DD" />
+					</div>
+					<div class="inputs__component" data-date="month">
+						<input type="text" placeholder="MM" maxlength="2" aria-label="Month input MM" />
+					</div>
+					<div class="inputs__component" data-date="year">
+						<input type="text" placeholder="YYYY" maxlength="4" aria-label="Year input YYYY" />
+					</div>
+					<button class="btn">
+						<img src="/assets/images/icon-arrow.svg" alt="arrow" />
+					</button>
 				</div>
-				<div class="inputs__component" data-date="month">
-					<input type="text" placeholder="MM" maxlength="2" />
+				<div class="container__output">
+					<div class="output__text"><span class="output">- -</span> years</div>
+					<div class="output__text"><span class="output">- -</span> months</div>
+					<div class="output__text"><span class="output">- -</span> days</div>
 				</div>
-				<div class="inputs__component" data-date="year">
-					<input type="text" placeholder="YYYY" maxlength="4" />
-				</div>
-				<button class="btn">
-					<img src="/assets/images/icon-arrow.svg" alt="arrow" />
-				</button>
+			</section>
+			<div class="attribution">
+				Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+				Coded by <a href="https://github.com/Ah-Ibrahim" target="_blank">Ahmed Ibrahim</a>.
 			</div>
-			<div class="container__output">
-				<div class="output__text"><span class="output">- -</span> years</div>
-				<div class="output__text"><span class="output">- -</span> months</div>
-				<div class="output__text"><span class="output">- -</span> days</div>
-			</div>
-		</section>
-
-		<!-- <div class="attribution">
-			Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-			Coded by <a href="#">Your Name Here</a>.
-		</div> -->
+		</main>
 		<script src="scripts/script.js"></script>
 	</body>
 </html>
