@@ -20,7 +20,7 @@ const showError = function () {
 	for (let input of inputs) input.classList.add('error');
 };
 
-const reset = function () {
+const resetErrors = function () {
 	error = false;
 
 	for (let input of inputs) {
@@ -31,6 +31,12 @@ const reset = function () {
 
 	for (let output of outputs) {
 		output.textContent = '- -';
+	}
+};
+
+const clearInputs = function () {
+	for (let input of inputs) {
+		input.value = '';
 	}
 };
 
@@ -144,7 +150,7 @@ const validateDate = function (date) {
 };
 
 const parseDate = function () {
-	reset();
+	resetErrors();
 
 	inputDate.day = inputDay.value;
 	inputDate.month = inputMonth.value;
@@ -187,6 +193,7 @@ document.addEventListener('keydown', (event) => {
 	if (event.key === 'Enter') {
 		parseDate();
 	} else if (event.key === 'Escape') {
-		reset();
+		resetErrors();
+		clearInputs();
 	}
 });
